@@ -23,14 +23,22 @@ html {
   }
 
 
-#root{
-  display: grid;
+#root, body{
+  display: flex;
+  flex-direction: column;
   gap:5px;
+  min-height: 100dvh;
 }
 
-#header{
+#header, #navbar{
     display: flex;
     padding: 10px;
+    gap:5px;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
+}
+
+#footer{
+  margin-top: auto;
 }
