@@ -4,11 +4,12 @@ let test = () =>{
     console.log("test")
 }
 
-let url = "https://pokeapi.co/api/v2/pokemon/p*"
- async function fetchPoke() {
+//https://github.com/cheatsnake/emojihub
+let url = "https://emojihub.yurace.pro/api/all"
+ async function fetchEmoji() {
     const res = await fetch(url)
     const data = await res.json()
     console.log(data);
 }
 
-btn.addEventListener("click", fetchPoke)
+btn.addEventListener("click", fetchEmoji)
