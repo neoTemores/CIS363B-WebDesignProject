@@ -30,13 +30,19 @@ html {
   min-height: 100dvh;
 }
 
-#header, #navbar{
+#header, #navbar, #footer {
     display: flex;
     padding: 10px;
     gap:5px;
-    justify-content: space-between;
     align-items: center;
     text-align: center;
+}
+
+#header{
+  justify-content: space-between;
+}
+#navbar, #footer{
+  justify-content: space-evenly;
 }
 
 #footer{
