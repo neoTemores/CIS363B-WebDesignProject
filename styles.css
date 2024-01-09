@@ -24,6 +24,10 @@ html {
     height: auto;
   }
 
+  hr{
+    min-width: 100%;
+    margin-top: 0;
+  }
 
 body{
   display: flex;
@@ -33,7 +37,7 @@ body{
   background-color: #eeee;
 }
 
-#header, #navbar, #footer{
+#header, #navbar{
     display: flex;
     padding: 10px;
     gap:5px;
@@ -44,14 +48,20 @@ body{
 #header{
   justify-content: space-between;
 }
-#navbar, #footer{
+#navbar{
   justify-content: space-evenly;
 }
 
 #footer{
   margin-top: auto;
 }
-
+.footer-div{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5px;
+  gap: 10px;
+  justify-content: space-evenly;
+}
 
 #view-all-page, #category-group-page, .emoji-card{
   display: flex;
