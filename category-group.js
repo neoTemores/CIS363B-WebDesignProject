@@ -1,4 +1,4 @@
-import { fetchEmoji, displayCards } from "./index.js"
+import { fetchEmoji, displayCards, paginate, updateCurrentPage } from "./index.js"
 
 let categoryGroupPageDiv = document.getElementById("category-group-page")
 let categoryGroupBtn = document.getElementById("cat-grp-btn")
@@ -46,11 +46,12 @@ categoryGroupBtn.addEventListener("click", () => {
     setUrlAndFetch(categoryDropdown.value, groupDropdown.value)
 })
 
-function createPaginationBtns(currPageText){
+
+function createPaginationBtns(){
     let paginationContainer = document.querySelector(".pagination-container")
     let backBtn = document.createElement("input")
     let forwardBtn = document.createElement("input")
-    let currPageSpan = document.createElement("span")
+    let currPageDiv = document.createElement("span")
 
     paginationContainer.innerHTML = "";
 
@@ -62,24 +63,43 @@ function createPaginationBtns(currPageText){
     forwardBtn.type = "button"
     forwardBtn.value = "Forward"
 
-    currPageSpan.className = "current-page"
-    currPageSpan.innerHTML = currPageText
+    currPageDiv.className = "current-page-cat-grp"
 
     paginationContainer.appendChild(backBtn)
     paginationContainer.appendChild(forwardBtn)
-    paginationContainer.appendChild(currPageSpan)
+    paginationContainer.appendChild(currPageDiv)
+
+   createPaginationEventListeners()
 }
 
 
 const numOfEmojiPerPage = 10
 let startIndex = 0;
 let endIndex = numOfEmojiPerPage
-let currentPage = 1;
-let totalPages = 1;
+let currentPage;
+let totalPages;
+let filteredEmojiArr = []
+
+function createPaginationEventListeners(){
+    let backBtn = document.querySelector(".back-btn")
+    let forwardBtn = document.querySelector(".forward-btn") 
+    let currentPageDiv = document.querySelector(".current-page-cat-grp")
+    updateCurrentPage(currentPage, totalPages, currentPageDiv)
+
+    backBtn.addEventListener("click", ()=> {
+        let indexes = paginate(-numOfEmojiPerPage, startIndex, endIndex, currentPage, totalPages, filteredEmojiArr, categoryGroupPageDiv, currentPageDiv)
+        startIndex = indexes[0]
+        endIndex = indexes[1]
+        currentPage = indexes[2]
+    })
+    forwardBtn.addEventListener("click", ()=> {
+        let indexes = paginate(numOfEmojiPerPage, startIndex, endIndex, currentPage, totalPages, filteredEmojiArr, categoryGroupPageDiv, currentPageDiv)
+        startIndex = indexes[0]
+        endIndex = indexes[1]
+        currentPage = indexes[2]    })
+}
 
 async function setUrlAndFetch(category, group){
-    console.log(category)
-    console.log(group)
     let url = ""
     if(groupDropdown.value === "all"){
         url = `https://emojihub.yurace.pro/api/all/category/${categoryDropdown.value}`
@@ -88,8 +108,11 @@ async function setUrlAndFetch(category, group){
         url = `https://emojihub.yurace.pro/api/all/group/${groupDropdown.value}`
     }
     
-    let filteredEmojiArr = await fetchEmoji(url)
+    filteredEmojiArr = await fetchEmoji(url)
+    currentPage = 1;
+    startIndex = 0
+    endIndex = numOfEmojiPerPage
     totalPages = Math.ceil(filteredEmojiArr.length / numOfEmojiPerPage);
-    createPaginationBtns(`Page ${currentPage} of ${totalPages}`)
+    createPaginationBtns()
     displayCards(filteredEmojiArr, categoryGroupPageDiv, startIndex, endIndex)
 }

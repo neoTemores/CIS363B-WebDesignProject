@@ -8,7 +8,8 @@ export async function fetchEmoji(url) {
 
 export function displayCards (data, pageDiv, start, end){
     pageDiv.innerHTML = "";
-    for(let i = start; i < end; i++) {
+    let endIndex = end > data.length ? data.length : end
+    for(let i = start; i < endIndex; i++) {
         const card = document.createElement("div")
         card.className = "emoji-card"
         const emojiDiv = document.createElement("div")
@@ -56,6 +57,7 @@ export function paginate(emojiPerPage, start, end, currPage, totalPages, emojiAr
         start = 0;
         end = Math.abs(emojiPerPage);  
     } 
+    
     else if(currPage == totalPages){
         let remainder = emojiArr.length % emojiPerPage
         end = start + remainder
