@@ -1,15 +1,8 @@
-let btn = document.getElementById("testbtn");
+ //https://github.com/cheatsnake/emojihub
 
-let test = () =>{
-    console.log("test")
-}
-
-//https://github.com/cheatsnake/emojihub
-let url = "https://emojihub.yurace.pro/api/all"
- async function fetchEmoji() {
+export async function fetchEmoji(url) {
     const res = await fetch(url)
     const data = await res.json()
-    console.log(data);
+    return data
 }
 
-btn.addEventListener("click", fetchEmoji)
