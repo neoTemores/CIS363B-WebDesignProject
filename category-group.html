@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Category / Group</title>
-    <script defer src="category-group.js"></script>
+    <script type="module" defer src="category-group.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="./assets/t-logo1.ico" />
 </head>
@@ -22,6 +22,31 @@
     </nav>
 
     <h1>Category / Group page</h1>
+    <span>
+        <label for="category">Category: </label>
+        <select name="category" id="category-dropdown">
+            <option value="smileys-and-people">Smileys & People</option>
+            <option value="animals-and-nature">Animals & Nature</option>
+            <option value="food-and-drink">Food & Drink</option>
+            <option value="travel-and-places">Travel & Places</option>
+            <option value="activities">Activities</option>
+            <option value="objects">Objects</option>
+            <option value="symbols">Symbols</option>
+            <option value="flags">Flags</option>
+        </select>
+
+        <label for="group">Group: </label>
+        <select name="group" id="group-dropdown"></select>
+
+        <input id="cat-grp-btn" type="button" value="Search">
+        <span class="current-page"></span>
+    </span>
+
+    <div class="pagination-container"></div>
+
+    <div id="category-group-page">
+
+    </div>
 
     <footer id="footer">
         <span><a href="about.html">About</a></span>
