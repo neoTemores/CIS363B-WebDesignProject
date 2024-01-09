@@ -1,6 +1,8 @@
-import {fetchEmoji, displayCards} from "./index.js"
+import {fetchEmoji, displayCards, paginate, updateCurrentPage} from "./index.js"
 
 let viewAllPageDiv= document.getElementById("view-all-page")
+const currentPageDiv = document.querySelector(".current-page")
+
 //https://github.com/cheatsnake/emojihub
 let url = "https://emojihub.yurace.pro/api/all"
 
@@ -15,34 +17,19 @@ let endIndex = numOfEmojiPerPage;
 
 const backBtn = document.querySelector(".back-btn")
 backBtn.addEventListener("click", ()=> {
-    paginate(-numOfEmojiPerPage)
+   let indexes = paginate(-numOfEmojiPerPage, startIndex, endIndex, currentPage, totalPages, allEmojiArrr, viewAllPageDiv, currentPageDiv)
+    startIndex = indexes[0]
+    endIndex = indexes[1]
+    currentPage = indexes[2]
 })
 
 const forwardBtn = document.querySelector(".forward-btn")
 forwardBtn.addEventListener("click", ()=> {
-    paginate(numOfEmojiPerPage)
+   let indexes = paginate(numOfEmojiPerPage, startIndex, endIndex, currentPage, totalPages, allEmojiArrr, viewAllPageDiv, currentPageDiv)
+   startIndex = indexes[0]
+   endIndex = indexes[1]
+   currentPage = indexes[2]
 })
 
-function paginate(value){
-    startIndex += value
-    endIndex += value
-    currentPage = value > 0 ? currentPage+=1 : currentPage-=1
-
-    if(currentPage < 1 || currentPage > totalPages){
-        currentPage = 1;
-        startIndex = 0;
-        endIndex = numOfEmojiPerPage;    
-    }
-
-    updateCurrentPage()
-    displayCards(allEmojiArrr, viewAllPageDiv, startIndex, endIndex)
-}
-
-const currentPageSpan = document.querySelector(".current-page")
-function updateCurrentPage() {
-    let currPageText = `Page ${currentPage} of ${totalPages}`
-    currentPageSpan.innerHTML = currPageText
-}
-
-updateCurrentPage()
+updateCurrentPage(currentPage, totalPages, currentPageDiv)
 displayCards(allEmojiArrr, viewAllPageDiv, startIndex, endIndex)

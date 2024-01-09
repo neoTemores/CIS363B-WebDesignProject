@@ -44,3 +44,30 @@ export function displayCards (data, pageDiv, start, end){
         pageDiv.appendChild(card)
     }  
 }
+
+
+export function paginate(emojiPerPage, start, end, currPage, totalPages, emojiArr, pageDiv, currPageDiv){
+    start += emojiPerPage
+    end += emojiPerPage
+    currPage = emojiPerPage > 0 ? currPage+=1 : currPage-=1
+
+    if(currPage < 1 || currPage > totalPages){
+        currPage = 1;
+        start = 0;
+        end = Math.abs(emojiPerPage);  
+    } 
+    else if(currPage == totalPages){
+        let remainder = emojiArr.length % emojiPerPage
+        end = start + remainder
+    }
+
+    updateCurrentPage(currPage, totalPages, currPageDiv )
+    displayCards(emojiArr, pageDiv, start, end)
+
+    return [start, end, currPage]
+}
+
+export function updateCurrentPage(currPage, totalPages, currPageDiv) {
+    let currPageText = `Page ${currPage} of ${totalPages}`
+    currPageDiv.innerHTML = currPageText
+}
