@@ -1,0 +1,1 @@
+import { fetchEmoji } from "./index.js";

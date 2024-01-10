@@ -45,7 +45,7 @@ body{
     text-align: center;
 }
 
-#header{
+#header, #test-unicode-page{
   justify-content: space-between;
 }
 #navbar{
@@ -63,7 +63,7 @@ body{
   justify-content: space-evenly;
 }
 
-#view-all-page, #category-group-page, .emoji-card{
+#view-all-page, #category-group-page, .emoji-card, #test-unicode-page{
   display: flex;
   padding: 10px;
   gap: 5px;
