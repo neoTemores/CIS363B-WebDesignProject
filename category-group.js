@@ -109,6 +109,7 @@ async function setUrlAndFetch(category, group){
     }
     
     filteredEmojiArr = await fetchEmoji(url)
+    console.log(filteredEmojiArr)
     currentPage = 1;
     startIndex = 0
     endIndex = numOfEmojiPerPage
