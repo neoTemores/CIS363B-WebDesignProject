@@ -74,7 +74,7 @@ function createPaginationBtns(){
 
 
 const numOfEmojiPerPage = 12
-let startIndex = 0;
+let startIndex;
 let endIndex = numOfEmojiPerPage
 let currentPage;
 let totalPages;
@@ -109,7 +109,6 @@ async function setUrlAndFetch(category, group){
     }
     
     filteredEmojiArr = await fetchEmoji(url)
-    console.log(filteredEmojiArr)
     currentPage = 1;
     startIndex = 0
     endIndex = numOfEmojiPerPage
