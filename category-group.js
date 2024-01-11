@@ -1,4 +1,4 @@
-import { fetchEmoji, displayCards, paginate, updateCurrentPage } from "./index.js"
+import { fetchEmoji, displayCards, paginate, updateCurrentPage } from "./common.js"
 
 let categoryGroupPageDiv = document.getElementById("category-group-page")
 let categoryGroupBtn = document.getElementById("cat-grp-btn")
