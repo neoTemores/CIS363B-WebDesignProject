@@ -83,6 +83,8 @@ let filteredEmojiArr = []
 function createPaginationEventListeners(){
     let backBtn = document.querySelector(".back-btn")
     let forwardBtn = document.querySelector(".forward-btn") 
+    backBtn.className = "btn"
+    forwardBtn.className = "btn"
     let currentPageDiv = document.querySelector(".current-page-cat-grp")
     updateCurrentPage(currentPage, totalPages, currentPageDiv)
 

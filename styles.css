@@ -59,6 +59,10 @@ body{
   justify-content: space-evenly;
 }
 
+input.btn:hover{
+  cursor: pointer;
+}
+
 #footer{
   margin-top: auto;
 }
@@ -90,5 +94,3 @@ body{
   align-self: center;
   font-size: 40px;
 }
-
-

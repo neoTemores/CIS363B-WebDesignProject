@@ -21,6 +21,7 @@ export function displayCards (data, pageDiv, start, end){
 
         let unicode = data[i].unicode[0]
         let emoji = unicode.replace("U+", "&#x")
+        emoji += ";"
         let name = data[i].name
         let category = data[i].category
         let group = data[i].group
