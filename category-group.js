@@ -73,7 +73,7 @@ function createPaginationBtns(){
 }
 
 
-const numOfEmojiPerPage = 12
+const numOfEmojiPerPage = 10
 let startIndex;
 let endIndex = numOfEmojiPerPage
 let currentPage;
