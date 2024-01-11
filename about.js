@@ -1,1 +1,1 @@
-import { fetchEmoji } from "./common.js";
+import { fetchEmoji } from "./app.js";

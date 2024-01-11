@@ -1,1 +1,1 @@
-import { fetchEmoji } from "./index.js";
+import { fetchEmoji } from "./app.js";
