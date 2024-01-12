@@ -84,14 +84,9 @@ input#email-subject{
 
 #home-emoji{
   font-size: 150px;
-  animation-name: "rotate";
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  transition: transform 2s linear;
 }
 #home-emoji:hover{
   cursor: default;
-  transform: rotate(360deg);
 }
 
 
