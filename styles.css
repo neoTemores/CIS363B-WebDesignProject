@@ -78,6 +78,23 @@ input#email-subject{
   justify-content: space-evenly;
 }
 
+#home-emoji-div {
+  text-align: center;
+}
+
+#home-emoji{
+  font-size: 150px;
+  animation-name: "rotate";
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transition: transform 2s linear;
+}
+#home-emoji:hover{
+  cursor: default;
+  transform: rotate(360deg);
+}
+
+
 #view-all-page, #category-group-page, .emoji-card, #test-unicode-page{
   display: flex;
   padding: 10px;
@@ -99,7 +116,9 @@ input#email-subject{
   font-size: 40px;
 }
 
-
+span#email-emoji{
+  font-size: 25px;
+}
 textarea#email-body{
   width: 100%;
   resize: none;
