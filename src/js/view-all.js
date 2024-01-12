@@ -1,4 +1,4 @@
-import {fetchEmoji, displayCards, paginate, updateCurrentPage} from "./app.js"
+import {fetchEmoji, displayCards, paginate, updateCurrentPage} from "../../app.js"
 
 let viewAllPageDiv= document.getElementById("view-all-page")
 const currentPageDiv = document.querySelector(".current-page")

@@ -1,4 +1,4 @@
-import { fetchEmoji } from "./app.js";
+import { fetchEmoji } from "../../app.js";
 
 loadHomePage();
 
@@ -11,7 +11,6 @@ async function loadHomePage(){
 }
 
 function displayRandomEmoji(unicode){
-    console.log(unicode)
     let emojiDiv = document.getElementById("home-emoji-div");
     let emojiSpan = document.getElementById("home-emoji");
     emojiSpan.innerHTML = "";
