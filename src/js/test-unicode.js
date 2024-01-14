@@ -1,4 +1,4 @@
-import { fetchEmoji, createCard } from "../../app.js";
+import { fetchEmoji, createCard, createErrorCard } from "../../app.js";
 
 loadTestUnicodePage();
 async function loadTestUnicodePage(){
@@ -10,18 +10,16 @@ async function displayRandomEmoji(){
     let randomEmojiDiv = document.getElementById("random-emoji")
     randomEmojiDiv.innerHTML = "<i>Loading...</i>";
     let url = "https://emojihub.yurace.pro/api/random"
-    let is200response;
     let emojiObj;
     let card;
 
     try {
         emojiObj = await fetchEmoji(url);
         card = createCard(emojiObj)
-        is200response = true;
     } catch (error) {
-        is200response = false;
+        card = createErrorCard()
     }
     
     randomEmojiDiv.innerHTML = "";
-    is200response ? randomEmojiDiv.appendChild(card) : randomEmojiDiv.innerHTML = "<i>Error!</i>"
+    randomEmojiDiv.appendChild(card)
 }   

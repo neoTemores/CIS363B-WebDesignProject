@@ -10,9 +10,30 @@ export function displayCards (data, pageDiv, start, end){
     pageDiv.innerHTML = "";
     let endIndex = end > data.length ? data.length : end
     for(let i = start; i < endIndex; i++) {
-        let card = createCard(data[i])
-        pageDiv.appendChild(card)
+        // let card = createCard(data[i])
+        // pageDiv.appendChild(card)
+        let card;
+        let isError = false;
+        try {
+            card = createCard(data[i])
+        } catch (error) {
+            card = createErrorCard();
+            isError = true;
+        } finally{
+            pageDiv.appendChild(card);
+        }
+
+        if(isError)
+            break;
     }  
+}
+
+export function createErrorCard() {
+    let errorCard = document.createElement("div")
+    errorCard.className = "emoji-error-card"
+    errorCard.innerHTML = "<i>Error!</i>"
+
+    return errorCard;
 }
 
 export function createCard(dataObj) {
