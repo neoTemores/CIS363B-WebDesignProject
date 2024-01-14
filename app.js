@@ -13,18 +13,14 @@ export function displayCards (data, pageDiv, start, end){
         // let card = createCard(data[i])
         // pageDiv.appendChild(card)
         let card;
-        let isError = false;
         try {
             card = createCard(data[i])
         } catch (error) {
             card = createErrorCard();
-            isError = true;
+            i = endIndex
         } finally{
             pageDiv.appendChild(card);
         }
-
-        if(isError)
-            break;
     }  
 }
 
