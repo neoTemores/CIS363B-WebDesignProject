@@ -119,3 +119,9 @@ textarea#email-body{
   resize: none;
   padding: 5px;
 }
+
+
+#entered-unicode-div{
+  border: 1px solid red;
+  min-height: 200px;
+}
