@@ -1,4 +1,4 @@
- //https://github.com/cheatsnake/emojihub
+//https://github.com/cheatsnake/emojihub
 
 export async function fetchEmoji(url) {
     const res = await fetch(url)
@@ -6,22 +6,21 @@ export async function fetchEmoji(url) {
     return data
 }
 
-export function displayCards (data, pageDiv, start, end){
+export function displayCards(data, pageDiv, start, end) {
     pageDiv.innerHTML = "";
     let endIndex = end > data.length ? data.length : end
-    for(let i = start; i < endIndex; i++) {
-        // let card = createCard(data[i])
-        // pageDiv.appendChild(card)
+    for (let i = start; i < endIndex; i++) {
+
         let card;
         try {
             card = createCard(data[i])
         } catch (error) {
             card = createErrorCard();
             i = endIndex
-        } finally{
+        } finally {
             pageDiv.appendChild(card);
         }
-    }  
+    }
 }
 
 export function createErrorCard() {
@@ -48,17 +47,17 @@ export function createCard(dataObj) {
     let name = dataObj.name
     let category = dataObj.category
     let group = dataObj.group
-    
-    if(name.includes("≊")){
+
+    if (name.includes("≊")) {
         name = name.slice(0, name.indexOf("≊"))
     }
 
     emojiDiv.innerHTML = emoji
     unicodeDiv.innerHTML = "Unicode: " + unicode
-    nameDiv.innerHTML = "Name: "+ name
+    nameDiv.innerHTML = "Name: " + name
     categoryDiv.innerHTML = "Category: " + category
     groupDiv.innerHTML = "Group: " + group
-    
+
 
     card.appendChild(emojiDiv)
     card.appendChild(unicodeDiv)
@@ -69,23 +68,25 @@ export function createCard(dataObj) {
     return card;
 }
 
-export function paginate(emojiPerPage, start, end, currPage, totalPages, emojiArr, pageDiv, currPageDiv){
+export function paginate(emojiPerPage, start, end, currPage, totalPages, emojiArr, pageDiv, currPageDiv) {
+    let isPageForward = emojiPerPage > 0;
     start += emojiPerPage
     end += emojiPerPage
-    currPage = emojiPerPage > 0 ? currPage+=1 : currPage-=1
 
-    if(currPage < 1 || currPage > totalPages){
-        currPage = 1;
-        start = 0;
-        end = Math.abs(emojiPerPage);  
-    } 
-    
-    else if(currPage == totalPages){
-        let remainder = emojiArr.length % emojiPerPage
-        end = start + remainder
+    if (isPageForward && currPage == totalPages) {
+        currPage = 1
+        start = 0
+        end = Math.abs(emojiPerPage)
+    }
+    else if (!isPageForward && currPage == 1) {
+        start = 0
+        end = Math.abs(emojiPerPage)
+    }
+    else {
+        currPage = isPageForward ? currPage += 1 : currPage -= 1
     }
 
-    updateCurrentPage(currPage, totalPages, currPageDiv )
+    updateCurrentPage(currPage, totalPages, currPageDiv)
     displayCards(emojiArr, pageDiv, start, end)
 
     return [start, end, currPage]

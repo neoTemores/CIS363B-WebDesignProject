@@ -54,6 +54,7 @@ function displayEnteredUnicode(unicode, div) {
     div.innerHTML = ""
     let strippedUnicode = unicode.substring(2)
     let enteredUnicode = document.createElement("div")
+    enteredUnicode.id = "entered-unicode"
     enteredUnicode.innerHTML = "&#x" + strippedUnicode
     div.appendChild(enteredUnicode)
 }

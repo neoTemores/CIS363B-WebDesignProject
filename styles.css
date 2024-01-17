@@ -125,3 +125,7 @@ textarea#email-body{
   border: 1px solid red;
   min-height: 200px;
 }
+#entered-unicode{
+  font-size: 100px;
+  text-align: center;
+}
