@@ -33,10 +33,10 @@ function validateEnteredUnicode() {
     let unicode = enteredUnicodeTextBox.value
 
     if (unicode.length <= 5 || unicode.length >= 8) {
-        displayEnteredError("Error: Unicode must be 6 - 7 characters.", enteredUniCodeDiv)
+        displayEnteredError("Error:<br>Unicode must be 6 - 7 characters", enteredUniCodeDiv)
     }
     else if (unicode.substring(0, 2).toUpperCase() !== "U+") {
-        displayEnteredError("Error: Unicode must begin with \"U+\"", enteredUniCodeDiv)
+        displayEnteredError("Error:<br>Unicode must begin with \"U+\"", enteredUniCodeDiv)
     } else {
         displayEnteredUnicode(unicode, enteredUniCodeDiv)
     }
