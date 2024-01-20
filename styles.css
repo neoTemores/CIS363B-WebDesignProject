@@ -1,4 +1,41 @@
+/* CIS363B module3 CSS requirements */
 
+h1 {
+  background-color: #f03;
+  border-bottom-width: thin;
+  border-bottom-style: solid;
+  border-bottom-color: #003;
+  text-align: center;
+  margin: 35px;
+}
+
+h2 {
+  color:#333;
+  font-weight: bold;
+}
+
+p {
+  font-family: Georgia;
+  color: #030;
+  padding: 15px;
+}
+
+li {
+  font-family: Arial;
+  background-color: gray;
+  color: black;
+  font-weight: bold;;
+  font-size: 18pt;
+}
+
+a {
+  color: #cc0000;
+}
+
+a:hover {
+  color: #060;
+}
+/* 
 html {
     box-sizing: border-box;
     font-size: 16px;
@@ -128,4 +165,4 @@ textarea#email-body{
 #entered-unicode{
   font-size: 100px;
   text-align: center;
-}
+} */
