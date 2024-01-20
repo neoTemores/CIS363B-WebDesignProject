@@ -59,12 +59,17 @@ body{
 
 #header, #navbar{
   display: flex;
-  padding: 10px;
   gap:5px;
   align-items: center;
   text-align: center;
 }
 
+img[alt="emoji logo"]{
+  padding-left: 5px
+}
+#header-title{
+  flex-basis: 80%;
+}
 #header, #test-unicode-page{
 justify-content: space-between;
 }
@@ -74,24 +79,26 @@ justify-content: space-evenly;
 padding: 0;
 }
 
-#header-title{
-  flex-basis: 80%;
-}
 hr{
   min-width: 100%;
 }
+h2, h4, ul {
+  margin: 0;
+  padding-left: 5px
+}
 
+h3 {
+  margin: 10px 10px 0px;
+}
 p.indent{
   text-indent: 25px;
 }
 
 ol, ul {
   list-style: inside;
+  margin: 0 10px 10px;
 }
-ul.sub-li{
-  list-style: circle;
-}
-  
+
 img {
   max-width: 100%;
   height: auto;
@@ -100,14 +107,11 @@ img {
 input.btn:hover{
   cursor: pointer;
 }
-input#email-subject{
-  width: 100%;
-  padding: 5px;
-}
 
 #footer{
   margin-top: auto;
 }
+
 .footer-div{
   display: flex;
   justify-content: center;
@@ -123,20 +127,25 @@ input#email-subject{
 #home-emoji{
   font-size: 150px;
 }
+
 #home-emoji:hover{
   cursor: default;
 }
 
-
-#view-all-page, #category-group-page, .emoji-card, #test-unicode-page{
+#about-pg-container, #view-all-page, #category-group-page, .emoji-card, #test-unicode-page{
   display: flex;
-  padding: 10px;
   gap: 5px;
 }
+
+#about-pg-container{
+  flex-direction: column;
+}
+
 #view-all-page, #category-group-page{
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .emoji-card {
   flex-direction: column;
   border: 1px solid black;
@@ -144,14 +153,17 @@ input#email-subject{
   max-width: 20%;
   min-width: min-content
 }
+
 .emoji{
   align-self: center;
   font-size: 40px;
 }
 
-span#email-emoji{
-  font-size: 25px;
+input#email-subject{
+  width: 100%;
+  padding: 5px;
 }
+
 textarea#email-body{
   width: 100%;
   resize: none;
@@ -162,6 +174,7 @@ textarea#email-body{
   border: 1px solid gray;
   min-height: 200px;
 }
+
 #entered-unicode{
   font-size: 100px;
   text-align: center;
