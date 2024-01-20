@@ -36,84 +36,65 @@ a:hover {
   color: #060;
 }
 /* ================================ */
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+/* ================================ */
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+  height: 100dvh
+}
+  
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-#header {
+body{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  background-color: #eeee;
+  height: 100%;
+  margin: 0;
 }
+
+#header, #navbar{
+  display: flex;
+  padding: 10px;
+  gap:5px;
+  align-items: center;
+  text-align: center;
+}
+
+#header, #test-unicode-page{
+justify-content: space-between;
+}
+
+#navbar{
+justify-content: space-evenly;
+padding: 0;
+}
+
 #header-title{
   flex-basis: 80%;
 }
 hr{
   min-width: 100%;
 }
-footer {
-  margin-top: auto;
+
+p.indent{
+  text-indent: 25px;
 }
-/* 
-html {
-    box-sizing: border-box;
-    font-size: 16px;
-    font-family: sans-serif, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS'
-  }
+
+ol, ul {
+  list-style: inside;
+}
+ul.sub-li{
+  list-style: circle;
+}
   
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  body, h1, h2, h3, h4, h5, h6, p {
-    margin: 0 5px 0 5px;
-    padding: 0;
-    font-weight: normal;
-  }
-
-  p.indent{
-    text-indent: 25px;
-  }
-
-  ol, ul {
-    list-style: inside;
-  }
-  ul.sub-li{
-    list-style: circle;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  hr{
-    min-width: 100%;
-    margin-top: 0;
-  }
-
-body{
-  display: flex;
-  flex-direction: column;
-  gap:5px;
-  min-height: 100dvh;
-  background-color: #eeee;
-}
-
-#header, #navbar{
-    display: flex;
-    padding: 10px;
-    gap:5px;
-    align-items: center;
-    text-align: center;
-}
-
-#header, #test-unicode-page{
-  justify-content: space-between;
-}
-#navbar{
-  justify-content: space-evenly;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 input.btn:hover{
@@ -177,12 +158,11 @@ textarea#email-body{
   padding: 5px;
 }
 
-
 #entered-unicode-div{
-  border: 1px solid red;
+  border: 1px solid gray;
   min-height: 200px;
 }
 #entered-unicode{
   font-size: 100px;
   text-align: center;
-} */
+} 
