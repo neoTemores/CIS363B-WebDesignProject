@@ -1,5 +1,5 @@
 /* CIS363B module3 CSS requirements */
-
+/* ========= Neo Temores ========== */
 h1 {
   background-color: #f03;
   border-bottom-width: thin;
@@ -34,6 +34,26 @@ a {
 
 a:hover {
   color: #060;
+}
+/* ================================ */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+}
+#header-title{
+  flex-basis: 80%;
+}
+hr{
+  min-width: 100%;
+}
+footer {
+  margin-top: auto;
 }
 /* 
 html {
