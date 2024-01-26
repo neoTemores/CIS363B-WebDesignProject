@@ -1,6 +1,13 @@
 * {
   box-sizing: content-box;
 }
+body {
+  background-color: #dddd;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  text-shadow: 1px 1px 2px green;
+}
 #index-container {
   display: flex;
   flex-direction: column;
@@ -100,6 +107,27 @@ img,
   opacity: 0.5;
 }
 
+p {
+  padding: 10px 15px;
+}
+#info-div {
+  align-self: start;
+  margin-top: 0px;
+  margin-left: 15px;
+}
+#info-div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style-type: circle;
+}
+a {
+  color: darkgreen;
+}
+a:hover {
+  color: green;
+  opacity: 0.75;
+}
 @keyframes slide {
   0% {
     opacity: 0;
