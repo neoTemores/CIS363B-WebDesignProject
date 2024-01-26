@@ -14,6 +14,8 @@
   border-radius: 5px;
   border-style: ridge;
   box-shadow: 5px 5px 5px gray;
+  display: flex;
+  justify-content: center;
 }
 #image1 {
   position: absolute;
@@ -67,24 +69,35 @@ img,
   position: relative;
   left: -600px;
 }
-
+#slideshow-container:hover,
 #slideshow-container:hover .animated-img,
 #slideshow-container:hover + #loading-bar-container div {
   cursor: progress;
   animation-play-state: paused;
 }
 
-#slideshow-container::after {
-  content: "Paused...";
-  font-weight: bold;
-  text-shadow: 1px 1px white;
-  position: relative;
-  margin-left: 5px;
-  margin-top: 5px;
+#paused-div {
+  align-self: center;
+  z-index: 1;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px gray;
+  padding: 15px;
+  background-color: white;
   opacity: 0;
+  display: flex;
+  gap: 5px;
 }
-#slideshow-container:hover::after {
-  opacity: 1;
+.pause-bars {
+  width: 10px;
+  height: 30px;
+  background-color: gray;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+#slideshow-container:hover #paused-div {
+  opacity: 0.5;
 }
 
 @keyframes slide {
