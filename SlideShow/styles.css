@@ -11,45 +11,28 @@
   border-radius: 5px;
   border-style: ridge;
   box-shadow: 5px 5px 5px gray;
-  height: 200px;
-  width: 400px;
 }
 #image1 {
-  width: 400px;
-  height: 200px;
-  background-color: darkblue;
   position: absolute;
   opacity: 0;
   animation: slide 25s linear 0s infinite;
 }
 #image2 {
-  width: 400px;
-  height: 200px;
-  background-color: darkcyan;
   position: absolute;
   opacity: 0;
   animation: slide 25s linear 5s infinite;
 }
 #image3 {
-  width: 400px;
-  height: 200px;
-  background-color: darkgreen;
   position: absolute;
   opacity: 0;
   animation: slide 25s linear 10s infinite;
 }
 #image4 {
-  width: 400px;
-  height: 200px;
-  background-color: darkorange;
   position: absolute;
   opacity: 0;
   animation: slide 25s linear 15s infinite;
 }
 #image5 {
-  width: 400px;
-  height: 200px;
-  background-color: darkred;
   position: absolute;
   opacity: 0;
   animation: slide 25s linear 20s infinite;
@@ -58,9 +41,16 @@
   cursor: progress;
   animation-play-state: paused;
 }
+
+.animated-img img,
+#slideshow-container {
+  width: 600px;
+  height: 400px;
+}
 #slideshow-container::after {
   content: "Paused...";
   font-weight: bold;
+  text-shadow: 1px 1px white;
   position: relative;
   opacity: 0;
 }
