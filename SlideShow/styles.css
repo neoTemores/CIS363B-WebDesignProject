@@ -62,7 +62,7 @@ img,
 #loading-bar {
   width: 610px;
   height: 15px;
-  animation: load 25s linear 0s infinite;
+  animation: loading 25s linear 0s infinite;
   z-index: -1;
   position: relative;
   left: -600px;
@@ -105,7 +105,7 @@ img,
   }
 }
 
-@keyframes load {
+@keyframes loading {
   0% {
     left: -600px;
     background-color: lightgreen;
