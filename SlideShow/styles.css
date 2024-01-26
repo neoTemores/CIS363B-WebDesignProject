@@ -5,12 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 #slideshow-container {
   padding: 10px;
-  border: 10px solid olive;
-  background-color: #aaaa;
+  border: 10px solid darkgreen;
+  background-color: lightgrey;
   border-radius: 5px;
   border-style: ridge;
   box-shadow: 5px 5px 5px gray;
@@ -54,42 +54,22 @@ img,
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 2px 2px 2px gray;
-  padding: 1px;
   display: flex;
-  gap: 1px;
+  align-items: center;
+  overflow: hidden;
 }
 
-.loading-bar {
-  width: 120px;
-  height: 10px;
-  background-color: gray;
-  opacity: 0;
-}
-#loading-bar-container :nth-child(1) {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-#loading-bar-container :nth-child(5) {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-#load-bar1 {
+#loading-bar {
+  width: 610px;
+  height: 15px;
   animation: load 25s linear 0s infinite;
-}
-#load-bar2 {
-  animation: load 25s linear 5s infinite;
-}
-#load-bar3 {
-  animation: load 25s linear 10s infinite;
-}
-#load-bar4 {
-  animation: load 25s linear 15s infinite;
-}
-#load-bar5 {
-  animation: load 25s linear 20s infinite;
+  z-index: -1;
+  position: relative;
+  left: -600px;
 }
 
-#slideshow-container:hover .animated-img {
+#slideshow-container:hover .animated-img,
+#slideshow-container:hover + #loading-bar-container div {
   cursor: progress;
   animation-play-state: paused;
 }
@@ -99,6 +79,8 @@ img,
   font-weight: bold;
   text-shadow: 1px 1px white;
   position: relative;
+  margin-left: 5px;
+  margin-top: 5px;
   opacity: 0;
 }
 #slideshow-container:hover::after {
@@ -125,13 +107,12 @@ img,
 
 @keyframes load {
   0% {
-    opacity: 0;
-  }
-  16% {
-    opacity: 1;
+    left: -600px;
+    background-color: lightgreen;
   }
 
   100% {
-    opacity: 1;
+    left: 0px;
+    background-color: darkgreen;
   }
 }
