@@ -1,3 +1,6 @@
+* {
+  box-sizing: content-box;
+}
 #index-container {
   display: flex;
   flex-direction: column;
@@ -37,26 +40,14 @@
   opacity: 0;
   animation: slide 25s linear 20s infinite;
 }
-#slideshow-container:hover .animated-img {
-  cursor: progress;
-  animation-play-state: paused;
-}
 
-.animated-img img,
+.animated-img,
+img,
 #slideshow-container {
   width: 600px;
   height: 400px;
 }
-#slideshow-container::after {
-  content: "Paused...";
-  font-weight: bold;
-  text-shadow: 1px 1px white;
-  position: relative;
-  opacity: 0;
-}
-#slideshow-container:hover::after {
-  opacity: 1;
-}
+
 @keyframes slide {
   0% {
     opacity: 0;
@@ -73,4 +64,26 @@
   100% {
     opacity: 0;
   }
+}
+
+#loading-bar-container {
+  width: 600px;
+  height: 10px;
+  border: 1px solid red;
+  position: absolute;
+}
+#slideshow-container:hover .animated-img {
+  cursor: progress;
+  animation-play-state: paused;
+}
+
+#slideshow-container::after {
+  content: "Paused...";
+  font-weight: bold;
+  text-shadow: 1px 1px white;
+  position: relative;
+  opacity: 0;
+}
+#slideshow-container:hover::after {
+  opacity: 1;
 }
