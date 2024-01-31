@@ -2,6 +2,7 @@ html {
   box-sizing: border-box;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #9993;
 }
 
 *,
@@ -63,7 +64,6 @@ nav {
   display: flex;
   gap: 10vw;
   justify-content: center;
-  /* border-top: 1px solid #555; */
   border-bottom: 1px solid #555;
   padding-bottom: 10px;
 }
@@ -103,6 +103,13 @@ ul {
   margin-top: 0;
   list-style-type: circle;
 }
+#majorDescImgContainer {
+  display: flex;
+}
+#majorImg {
+  max-width: 40%;
+  margin-right: 10px;
+}
 
 #classUlContainer {
   display: flex;
@@ -111,15 +118,38 @@ ul {
   padding: 0 10px 0 0;
 }
 
-@media screen and (max-width: 715px) {
+@media screen and (max-width: 705px) {
   #classUlContainer {
     flex-direction: column;
+    width: fit-content;
+    padding: 0;
   }
 }
 
 #classUlContainer p {
   text-decoration: underline;
 }
+#careerImg {
+  max-width: 50%;
+  float: right;
+  margin: 10px;
+  border-radius: 10px;
+}
+#careerInfoContainer span {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+#careerInfoContainer li span {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+#careerInfoContainer ul li {
+  font-style: italic;
+  padding: 5px;
+}
+
 footer {
   border-top: 1px solid #555;
   margin-top: auto;
