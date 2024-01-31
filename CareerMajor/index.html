@@ -16,17 +16,46 @@
         </a>
 
         <div class="title">
-          CIS363B: Web Interface Design <br />
-          Module 5 Project
+          CIS363B: Web Interface Design
+          <span>Module 5 Project</span>
         </div>
       </div>
+
       <nav>
-        <a href="./index.html">Home</a>
-        <a href="./src/major.html">Major</a>
-        <a href="./src/career.html">Career</a>
+        <a href="./index.html" id="index.html" class="navbarLink"> Home</a>
+        <a href="./src/major.html" id="major.html" class="navbarLink">Major</a>
+        <a href="./src/career.html" id="career.html" class="navbarLink">Career</a>
       </nav>
     </header>
-    <h1>Home page</h1>
+
+    <h2 id="welcomeHomeTitle">Welcome to Neo's week 5 CIS363B project!</h2>
+    <div>
+      <p>
+        The goal of this weeks' project is to create a website the provides information about my
+        major and future career oportunites. We also covered an introduction to JavaScript this week
+        and must incorporate a few JS functions in our project. One function will display the
+        current date in the footer of the page.
+      </p>
+      <p>
+        Please use the navbar above to navigate to the "Major" page to see information about my
+        degree and to the "Career" page to see potential career opportunites.
+      </p>
+      <p>I used a few functions in this project:</p>
+      <ul>
+        <li>
+          <code>setCurrentDate()</code> is the main function that handles setting the date in the
+          footer.
+        </li>
+        <li><code>parseDayOfWeek(day)</code> returns the day of the week as a string.</li>
+        <li>
+          <code>parseDateSuffix(date)</code> returns the correct date suffix
+          <i>(st, nd, rd, th)</i>.
+        </li>
+        <li><code>parseMonth(month)</code> returns the month as a string.</li>
+        <li><code>updateNavbar()</code> updates the highlighted navbar link.</li>
+      </ul>
+    </div>
+
     <footer>
       <div id="currentDate"></div>
     </footer>
