@@ -1,0 +1,13 @@
+function setCurrentDate() {
+  const today = new Date();
+  let day = parseDayOfWeek(today.getDay());
+  let date = today.getDate();
+  let suffix = parseDateSuffix(date);
+  let month = parseMonth(today.getMonth());
+  let year = today.getFullYear();
+
+  let dateStr = `Today is ${day}, ${month} ${date}${suffix}, ${year}`;
+
+  let currDateDiv = document.getElementById("currentDate");
+  currDateDiv.innerHTML = dateStr;
+}

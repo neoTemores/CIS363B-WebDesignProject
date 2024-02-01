@@ -1,0 +1,13 @@
+function parseDayOfWeek(day) {
+  //date obj can only return day values 0-6
+  const dayOfWeekObj = {
+    0: "Sunday",
+    1: "Monday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday",
+  };
+  return dayOfWeekObj[day];
+}
