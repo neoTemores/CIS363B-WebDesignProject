@@ -1,4 +1,4 @@
 {
-  "prettier.semi": true,
-  "css.completion.completePropertyWithSemicolon": false
+  "css.completion.completePropertyWithSemicolon": false,
+  "editor.formatOnSave": true
 }
