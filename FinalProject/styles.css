@@ -1,0 +1,54 @@
+* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    color: #333;
+}
+
+header {}
+
+.headerTitle {
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.containerLogoTitle {
+    padding: 1vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    background-color: #333;
+    justify-content: space-around;
+}
+
+.navbarLink {
+    color: #ddd;
+    text-decoration: none;
+    padding: 1vw;
+}
+
+.navbarLink:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+.activeLink,
+.activeLink:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+footer {
+    border-top: 1px solid #333;
+    margin-top: auto;
+    font-size: .8rem;
+}
