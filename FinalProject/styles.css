@@ -27,7 +27,7 @@ header .containerLogoTitle {
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
   position: absolute;
-  top: 50px;
+  top: 40px;
   color: #ddd;
 }
 
@@ -57,11 +57,17 @@ nav {
   border-bottom: 4px solid green;
 }
 
-main {}
+main {
+  padding: 1rem;
+}
+
+main p {
+  text-indent: 1.5rem;
+}
 
 footer {
   border-top: 1px solid green;
   margin-top: auto;
   font-size: 0.8rem;
-  padding: 4px;
+  padding: .25rem;
 }
