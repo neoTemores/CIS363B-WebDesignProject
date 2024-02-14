@@ -29,6 +29,7 @@ header .containerLogoTitle {
   position: absolute;
   top: 40px;
   color: #ddd;
+  margin-left: 1rem
 }
 
 nav {
@@ -61,8 +62,11 @@ main {
   padding: 1rem;
 }
 
-main p {
-  text-indent: 1.5rem;
+#homeImg {
+  float: right;
+  padding: 0 1rem 1rem;
+  width: 200px;
+  border-radius: 50%;
 }
 
 footer {
