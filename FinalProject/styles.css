@@ -13,6 +13,11 @@ body {
 
 header {}
 
+img {
+  border: 2px solid darkgreen;
+  box-shadow: 5px 5px 5px #3335
+}
+
 header .containerLogoTitle {
   height: 100px;
   overflow: hidden;
@@ -64,7 +69,7 @@ main {
 
 .pageImg {
   float: right;
-  padding: 0 1rem 1rem;
+  margin: 0 1rem 1rem;
   width: 200px;
 }
 
@@ -76,14 +81,21 @@ main {
   padding-bottom: 0;
 }
 
-@media screen and (max-width: 515px) {
-  #educationImg {
+#skillsImg {
+  width: 300px;
+}
+
+@media screen and (max-width: 535px) {
+
+  #educationImg,
+  #skillsImg {
     float: none;
     width: 75%;
     padding: 0;
     display: block;
     margin: 0 auto 1rem;
   }
+
 }
 
 .educationGradYear {
@@ -91,12 +103,33 @@ main {
   vertical-align: bottom
 }
 
+
 li {
   margin-bottom: .5rem;
+  list-style-type: circle;
 }
 
 li div span {
   display: inline-block;
+}
+
+#containerSkills {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+h4 {
+  border-bottom: 1px solid darkgreen;
+  width: fit-content;
+  margin-bottom: 0;
+}
+
+.skillsUL {
+  box-shadow: 5px 5px 5px #3335;
+  border: 1px solid #3335;
+  padding: .5rem;
+  list-style-position: inside;
 }
 
 footer {
