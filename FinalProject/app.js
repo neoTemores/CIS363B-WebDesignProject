@@ -47,3 +47,12 @@ function handleSubmit(form) {
     let actionString = `mailto:neo.temores@live.com?subject=${subject}`
     form.setAttribute("action", actionString)
 }
+
+let btn = document.getElementById("scroll")
+let test = 0
+btn.addEventListener("click", () => {
+    let container = document.getElementById("containerPortfolio")
+    console.log(container)
+    test += 376
+    container.scrollTo(0, test)
+})

@@ -155,6 +155,7 @@ fieldset {
   flex-direction: column;
   max-width: 500px;
   margin: auto;
+  border: 1px solid darkgreen;
 }
 
 #clearBtn {
@@ -171,6 +172,12 @@ label:not(.ignore),
 #submitBtn:hover,
 #clearBtn:hover {
   cursor: pointer;
+}
+
+#containerPortfolio {
+  height: 55vh;
+  overflow: hidden;
+  scroll-behavior: smooth
 }
 
 footer {
