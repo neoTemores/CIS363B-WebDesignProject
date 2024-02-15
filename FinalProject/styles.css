@@ -62,11 +62,41 @@ main {
   padding: 1rem;
 }
 
-#homeImg {
+.pageImg {
   float: right;
   padding: 0 1rem 1rem;
   width: 200px;
+}
+
+#homeImg {
   border-radius: 50%;
+}
+
+#educationImg {
+  padding-bottom: 0;
+}
+
+@media screen and (max-width: 515px) {
+  #educationImg {
+    float: none;
+    width: 75%;
+    padding: 0;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+}
+
+.educationGradYear {
+  font-size: .9rem;
+  vertical-align: bottom
+}
+
+li {
+  margin-bottom: .5rem;
+}
+
+li div span {
+  display: inline-block;
 }
 
 footer {
