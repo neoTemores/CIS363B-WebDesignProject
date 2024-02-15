@@ -25,3 +25,22 @@ btn.addEventListener("click", () => {
     form.setAttribute("action", "mailto:test@gmail.com?subject=testing the subject")
     console.log(form.getAttribute("action"))
 })
+
+let firstNameInput = document.getElementById("firstNameInput")
+firstNameInput.addEventListener("invalid", () => {
+    // firstNameInput.setCustomValidity(firstNameInput.getAttribute("placeholder"))
+    // firstNameInput.setCustomValidity("Please enter your first name")
+    firstNameInput.setAttribute("oninvalid", firstNameInput.setCustomValidity("test"))
+
+})
+
+// inputs.forEach((elem) => {
+//     // elem.setAttribute("oninvalid", "test")
+//     // elem.setCustomValidity(elem.getAttribute("placeholder"))
+
+//     elem.addEventListener("invalid", (e) => {
+//         console.log(elem)
+//     })
+// })
+
+// oninvalid = "this.setCustomValidity('Lütfen işaretli yerleri doldurunuz')"
