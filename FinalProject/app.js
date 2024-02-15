@@ -1,46 +1,46 @@
+const END_POINT = getEndPoint();
 updateNavbar();
 
 function updateNavbar() {
-    let pathNameArr = window.location.pathname.toString().split("/");
-    let endPoint = pathNameArr[pathNameArr.length - 1];
     let navbarLinks = document.querySelectorAll(".navbarLink");
 
     navbarLinks.forEach((elem) => {
         elem.classList.remove("activeLink");
-        if (elem.id == endPoint) {
+        if (elem.id == END_POINT) {
             elem.classList.add("activeLink");
         }
     });
 
-    if (endPoint == "") {
-        navbarLinks[0].classList.add("activeLink");
-    }
+    END_POINT == "" && navbarLinks[0].classList.add("activeLink");
 }
 
+function getEndPoint() {
+    let pathNameArr = window.location.pathname.toString().split("/");
+    return pathNameArr[pathNameArr.length - 1];
 
-let form = document.getElementById("form")
-let btn = document.getElementById("submitBtn")
+}
 
-btn.addEventListener("click", () => {
-    form.setAttribute("action", "mailto:test@gmail.com?subject=testing the subject")
+function setFormValidityMsg(elemName, msg) {
+    let elem = document.getElementById(elemName)
+    elem.setAttribute("oninvalid", `this.setCustomValidity("Please enter ${msg}")`)
+    elem.setAttribute("oninput", 'this.setCustomValidity("")')
+}
+
+function handleSubmit(form) {
+    let firstName = document.getElementById("firstNameInput").value
+    let lastName = document.getElementById("lastNameInput").value
+    let email = document.getElementById("emailInput").value
+    let subject = `Hello from ${firstName} ${lastName}, ${email}`
+
+    let queryString = `mailto:test@gmail.com?subject=${subject}`
+    form.setAttribute("action", queryString)
     console.log(form.getAttribute("action"))
-})
+}
 
-let firstNameInput = document.getElementById("firstNameInput")
-firstNameInput.addEventListener("invalid", () => {
-    // firstNameInput.setCustomValidity(firstNameInput.getAttribute("placeholder"))
-    // firstNameInput.setCustomValidity("Please enter your first name")
-    firstNameInput.setAttribute("oninvalid", firstNameInput.setCustomValidity("test"))
-
-})
-
-// inputs.forEach((elem) => {
-//     // elem.setAttribute("oninvalid", "test")
-//     // elem.setCustomValidity(elem.getAttribute("placeholder"))
-
-//     elem.addEventListener("invalid", (e) => {
-//         console.log(elem)
-//     })
-// })
-
-// oninvalid = "this.setCustomValidity('Lütfen işaretli yerleri doldurunuz')"
+if (END_POINT == "contact.html") {
+    setFormValidityMsg("firstNameInput", "your first name")
+    setFormValidityMsg("lastNameInput", "your last name")
+    setFormValidityMsg("emailInput", "a valid email")
+    let form = document.getElementById("form")
+    form.addEventListener("submit", () => { handleSubmit(form) })
+}
