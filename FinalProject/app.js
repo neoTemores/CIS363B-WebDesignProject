@@ -20,27 +20,30 @@ function getEndPoint() {
 
 }
 
+if (END_POINT == "contact.html") {
+    setFormValidityMsg("firstNameInput", "your first name")
+    setFormValidityMsg("lastNameInput", "your last name")
+    setFormValidityMsg("emailInput", "a valid email")
+    createFormEvntListener()
+}
+
 function setFormValidityMsg(elemName, msg) {
     let elem = document.getElementById(elemName)
     elem.setAttribute("oninvalid", `this.setCustomValidity("Please enter ${msg}")`)
     elem.setAttribute("oninput", 'this.setCustomValidity("")')
 }
 
+function createFormEvntListener() {
+    let form = document.getElementById("form")
+    form.addEventListener("submit", () => { handleSubmit(form) })
+}
+
 function handleSubmit(form) {
     let firstName = document.getElementById("firstNameInput").value
     let lastName = document.getElementById("lastNameInput").value
     let email = document.getElementById("emailInput").value
-    let subject = `Hello from ${firstName} ${lastName}, ${email}`
+    let subject = `Hello from ${firstName} ${lastName} - ${email}`
 
-    let queryString = `mailto:test@gmail.com?subject=${subject}`
-    form.setAttribute("action", queryString)
-    console.log(form.getAttribute("action"))
-}
-
-if (END_POINT == "contact.html") {
-    setFormValidityMsg("firstNameInput", "your first name")
-    setFormValidityMsg("lastNameInput", "your last name")
-    setFormValidityMsg("emailInput", "a valid email")
-    let form = document.getElementById("form")
-    form.addEventListener("submit", () => { handleSubmit(form) })
+    let actionString = `mailto:neo.temores@live.com?subject=${subject}`
+    form.setAttribute("action", actionString)
 }
