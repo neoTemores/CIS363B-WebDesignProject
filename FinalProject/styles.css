@@ -13,11 +13,6 @@ body {
 
 header {}
 
-img {
-  border: 2px solid darkgreen;
-  box-shadow: 5px 5px 5px #3335
-}
-
 header .containerLogoTitle {
   height: 100px;
   overflow: hidden;
@@ -67,6 +62,12 @@ main {
   padding: 1rem;
 }
 
+img,
+#containerContactImg {
+  border: 2px solid darkgreen;
+  box-shadow: 5px 5px 5px #3335
+}
+
 .pageImg {
   float: right;
   margin: 0 1rem 1rem;
@@ -83,6 +84,23 @@ main {
 
 #skillsImg {
   width: 300px;
+}
+
+#containerContactImg {
+  height: 100px;
+  max-width: 400px;
+  overflow: hidden;
+  display: block;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+#contactImg {
+  width: 100%;
+  position: relative;
+  top: -60%;
+  border: none;
 }
 
 @media screen and (max-width: 535px) {
@@ -130,6 +148,29 @@ h4 {
   border: 1px solid #3335;
   padding: .5rem;
   list-style-position: inside;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+}
+
+#clearBtn {
+  width: 20%;
+  margin-left: auto;
+  padding: 0;
+}
+
+label:not(.ignore),
+#submitBtn {
+  margin-top: .5rem;
+}
+
+#submitBtn:hover,
+#clearBtn:hover {
+  cursor: pointer;
 }
 
 footer {

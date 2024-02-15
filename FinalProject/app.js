@@ -16,3 +16,12 @@ function updateNavbar() {
         navbarLinks[0].classList.add("activeLink");
     }
 }
+
+
+let form = document.getElementById("form")
+let btn = document.getElementById("submitBtn")
+
+btn.addEventListener("click", () => {
+    form.setAttribute("action", "mailto:test@gmail.com?subject=testing the subject")
+    console.log(form.getAttribute("action"))
+})
