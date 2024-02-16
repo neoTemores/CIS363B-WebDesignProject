@@ -48,11 +48,28 @@ function handleSubmit(form) {
     form.setAttribute("action", actionString)
 }
 
-let btn = document.getElementById("scroll")
+let btn = document.getElementById("scrollB")
 let test = 0
 btn.addEventListener("click", () => {
     let container = document.getElementById("containerPortfolio")
     console.log(container)
-    test += 376
-    container.scrollTo(0, test)
+    test -= 560
+    container.scrollTo(test, 0)
+    console.log(container.scrollHeight)
+
+    let frame = document.getElementsByTagName("iframe")
+    console.log(frame[0])
+    console.log(test)
+})
+let btn2 = document.getElementById("scrollF")
+btn2.addEventListener("click", () => {
+    let container = document.getElementById("containerPortfolio")
+    console.log(container)
+    test += 560
+    container.scrollTo(test, 0)
+    console.log(container.scrollHeight)
+
+    let frame = document.getElementsByTagName("iframe")
+    console.log(frame[0])
+    console.log(test)
 })
