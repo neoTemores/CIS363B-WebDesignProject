@@ -1,4 +1,8 @@
 const END_POINT = getEndPoint();
+let scrollValue = 0;
+let scrollLocation = 0;
+let scrollPosition = 1;
+
 updateNavbar();
 
 function updateNavbar() {
@@ -27,6 +31,12 @@ if (END_POINT == "contact.html") {
     createFormEvntListener()
 }
 
+if (END_POINT == "portfolio.html") {
+    setScrollValue();
+    createScrollEvntListener();
+    updateScrollPosition(0)
+}
+
 function setFormValidityMsg(elemName, msg) {
     let elem = document.getElementById(elemName)
     elem.setAttribute("oninvalid", `this.setCustomValidity("Please enter ${msg}")`)
@@ -48,28 +58,47 @@ function handleSubmit(form) {
     form.setAttribute("action", actionString)
 }
 
-let btn = document.getElementById("scrollB")
-let test = 0
-btn.addEventListener("click", () => {
-    let container = document.getElementById("containerPortfolio")
-    console.log(container)
-    test -= 560
-    container.scrollTo(test, 0)
-    console.log(container.scrollHeight)
+function resetVideoWidth(width) {
+    console.log("reset")
+    let newScrollLocation = 0;
 
-    let frame = document.getElementsByTagName("iframe")
-    console.log(frame[0])
-    console.log(test)
-})
-let btn2 = document.getElementById("scrollF")
-btn2.addEventListener("click", () => {
-    let container = document.getElementById("containerPortfolio")
-    console.log(container)
-    test += 560
-    container.scrollTo(test, 0)
-    console.log(container.scrollHeight)
+    switch (scrollLocation) {
 
-    let frame = document.getElementsByTagName("iframe")
-    console.log(frame[0])
-    console.log(test)
-})
+    }
+}
+
+function setScrollValue() {
+    let videoContainer = document.getElementById("containerVideo")
+    let videoWidth = videoContainer.offsetWidth;
+
+    scrollValue != videoWidth & scrollValue != 0 && resetVideoWidth(videoWidth);
+
+    scrollValue = videoWidth
+}
+function createScrollEvntListener() {
+    let bckBtn = document.getElementById("scrollB")
+    let fwdBtn = document.getElementById("scrollF")
+
+    window.addEventListener("resize", setScrollValue)
+    bckBtn.addEventListener("click", () => { scrollPosition != 1 && scrollVideo(-scrollValue) })
+    fwdBtn.addEventListener("click", () => { scrollPosition != 5 && scrollVideo(scrollValue) })
+}
+
+function scrollVideo() {
+    let portfolioContainers = document.querySelectorAll(".containerPortfolioScoll");
+    scrollLocation += value
+    portfolioContainers.forEach(elem => { elem.scrollTo(scrollLocation, 0) })
+    updateScrollPosition(value)
+}
+
+function updateScrollPosition(value) {
+    if (value == -scrollValue)
+        scrollPosition--
+
+    else if (value == scrollValue)
+        scrollPosition++
+
+    let scrollSpan = document.getElementById("scrollPosDisplay")
+    let msg = `${scrollPosition} of 5`
+    scrollSpan.innerHTML = msg;
+}
