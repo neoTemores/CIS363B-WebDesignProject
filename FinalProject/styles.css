@@ -11,8 +11,6 @@ body {
   background-color: #9995
 }
 
-header {}
-
 header .containerLogoTitle {
   height: 100px;
   overflow: hidden;
@@ -76,6 +74,11 @@ img,
 
 #homeImg {
   border-radius: 50%;
+}
+
+p i {
+  font-weight: bold;
+  font-size: .9rem;
 }
 
 #educationImg {
@@ -187,9 +190,23 @@ label:not(.ignore),
   scroll-behavior: initial !important;
 }
 
-#contailerVideoTitle span {
-  width: 560px;
+#containerVideoTitle span {
   font-weight: bold;
+  color: darkgreen;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+#containerVideoDescription span {
+  margin: 1rem 0;
+}
+
+#containerVideoDescription {
+  scroll-behavior: inherit !important
+}
+
+.videoTitleAndDescription {
+  width: 560px;
 }
 
 #containerVideo {
@@ -212,7 +229,7 @@ label:not(.ignore),
   }
 
   .containerPortfolioScoll,
-  #contailerVideoTitle span,
+  .videoTitleAndDescription,
   #containerScrollBtns,
   iframe,
   #containerVideo {
@@ -228,7 +245,7 @@ label:not(.ignore),
   }
 
   .containerPortfolioScoll,
-  #contailerVideoTitle span,
+  .videoTitleAndDescription,
   #containerScrollBtns,
   iframe,
   #containerVideo {
@@ -245,8 +262,21 @@ label:not(.ignore),
 }
 
 footer {
-  border-top: 1px solid green;
+  /* border-top: 1px solid green; */
   margin-top: auto;
   font-size: 0.8rem;
   padding: .25rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #333;
+  color: #bbb
+}
+
+footer span a {
+  color: #bbb
+}
+
+footer span a:hover {
+  color: #fff
 }
