@@ -174,7 +174,6 @@ label:not(.ignore),
   cursor: pointer;
 }
 
-
 .containerPortfolioScoll {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
@@ -182,6 +181,10 @@ label:not(.ignore),
   overflow: hidden;
   scroll-behavior: smooth;
   margin: 0 auto;
+}
+
+.quickScroll {
+  scroll-behavior: initial !important;
 }
 
 #contailerVideoTitle span {
@@ -205,19 +208,40 @@ label:not(.ignore),
 
   iframe,
   #containerVideo {
-    width: 360px;
-    height: 215px;
+    height: 225px;
   }
 
   .containerPortfolioScoll,
   #contailerVideoTitle span,
-  #containerScrollBtns {
-    width: 360px;
+  #containerScrollBtns,
+  iframe,
+  #containerVideo {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+
+  iframe,
+  #containerVideo {
+    height: 450px;
+  }
+
+  .containerPortfolioScoll,
+  #contailerVideoTitle span,
+  #containerScrollBtns,
+  iframe,
+  #containerVideo {
+    width: 800px;
   }
 }
 
 #containerScrollBtns input {
   width: 20%;
+}
+
+#containerScrollBtns input:hover {
+  cursor: pointer;
 }
 
 footer {
