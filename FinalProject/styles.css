@@ -76,10 +76,6 @@ img,
   border-radius: 50%;
 }
 
-p i {
-  font-weight: bold;
-  font-size: .9rem;
-}
 
 #educationImg {
   padding-bottom: 0;
@@ -109,7 +105,8 @@ p i {
 @media screen and (max-width: 535px) {
 
   #educationImg,
-  #skillsImg {
+  #skillsImg,
+  #portfolioImg {
     float: none;
     width: 75%;
     padding: 0;
@@ -138,6 +135,12 @@ li div span {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+p i,
+h1,
+h4 {
+  font-family: 'Times New Roman', Times, serif;
 }
 
 h4 {
@@ -192,7 +195,7 @@ label:not(.ignore),
 
 #containerVideoTitle span {
   font-weight: bold;
-  color: darkgreen;
+  color: #444;
   font-size: 1.25rem;
   margin-top: 1rem;
 }
@@ -237,7 +240,7 @@ label:not(.ignore),
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 835px) {
 
   iframe,
   #containerVideo {
@@ -262,7 +265,6 @@ label:not(.ignore),
 }
 
 footer {
-  /* border-top: 1px solid green; */
   margin-top: auto;
   font-size: 0.8rem;
   padding: .25rem;
