@@ -164,15 +164,24 @@ fieldset {
   border: 1px solid darkgreen;
 }
 
-#submitBtn {
-  background-color: rgb(0, 100, 0);
-  color: #fff
+#submitBtn:hover {
+  /* background-color: rgb(0, 100, 0);
+  color: #fff */
+  color: darkgreen;
+  background-color: initial;
+  border-color: green;
 }
 
 #clearBtn {
   width: 20%;
   margin-left: auto;
-  background-color: rgb(139, 0, 0)
+  /* background-color: rgb(139, 0, 0) */
+}
+
+#clearBtn:hover {
+  color: darkred;
+  background-color: initial;
+  border-color: red
 }
 
 label:not(.ignore),
@@ -181,17 +190,21 @@ label:not(.ignore),
 }
 
 .formBtn {
-  font-weight: bold;
+  /* font-weight: bold;
   box-shadow: 2px 2px 2px #333;
   opacity: .75;
   border-radius: 25px;
-  color: #fff
+  color: #fff */
+  box-shadow: 2px 2px 2px #333;
+  border-radius: 25px;
+  background-color: #444;
+  color: #ddd;
+  transition: all .2s
 }
 
 .formBtn:hover {
   cursor: pointer;
-  opacity: 1;
-
+  font-weight: bold;
 }
 
 .containerPortfolioScoll {
