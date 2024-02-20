@@ -43,7 +43,6 @@ function executeConditionalLogic() {
         toggleQuickScroll();
         setScrollValue();
         createScrollEvntListener();
-        // updateScrollPosition(null)
         scrollVideo(0)
         toggleQuickScroll();
     }
@@ -82,7 +81,7 @@ function handleSubmit(form) {
 // ====== Portfolio page logic ===================
 
 // add / remove smooth scroll behavior
-// want quick scroll when page loads & window resizes
+// want quick scroll when page loads or window resizes
 function toggleQuickScroll() {
     let portfolioContainers = document.querySelectorAll(".containerPortfolioScoll");
     portfolioContainers.forEach(elem => { elem.classList.toggle("quickScroll") })
@@ -103,6 +102,7 @@ function setScrollValue() {
 // resets the video container scroll location on window resize
 function resetVideoWidth(width) {
     toggleQuickScroll();
+    // new scroll location is the current pos (1-5) * width of current video player
     SCROLL_LOCATION = (SCROLL_POSITION - 1) * width;
     scrollVideo(0)
     toggleQuickScroll();
@@ -130,7 +130,7 @@ function scrollVideo(value) {
 }
 
 // stops video playback by resetting src url
-// this prevents video playback if not in current view
+// this prevents video playback if its not in current view
 function stopCurrentVideo() {
     let iFrames = document.querySelectorAll("iframe")
     let targetIframe = iFrames[SCROLL_POSITION - 1]

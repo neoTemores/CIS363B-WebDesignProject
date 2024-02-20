@@ -8,7 +8,7 @@ body {
   flex-direction: column;
   margin: 0;
   color: #333;
-  background-color: #9995
+  background-color: #ddd
 }
 
 header .containerLogoTitle {
@@ -141,19 +141,24 @@ p i,
 h1,
 h4 {
   font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
 }
 
 h4 {
-  border-bottom: 1px solid darkgreen;
   width: fit-content;
   margin-bottom: 0;
 }
 
 .skillsUL {
-  box-shadow: 5px 5px 5px #3335;
-  border: 1px solid #3335;
-  padding: .5rem;
+  box-shadow: 2px 2px 4px darkgreen;
+  border: 1px solid darkgreen;
+  padding: .5rem 1rem;
   list-style-position: inside;
+  border-radius: 10px;
+  background-color: #333;
+  color: #ddd;
+  margin-top: .5rem;
+  background-image: linear-gradient(to bottom right, #222, #555)
 }
 
 fieldset {
@@ -161,7 +166,13 @@ fieldset {
   flex-direction: column;
   max-width: 500px;
   margin: auto;
-  border: 1px solid darkgreen;
+  border: 2px solid darkgreen;
+  border-radius: 5px;
+}
+
+legend {
+  font-size: 1.1rem;
+  font-family: 'Times New Roman', Times, serif
 }
 
 .formInput {
@@ -171,6 +182,7 @@ fieldset {
   box-shadow: 2px 2px 2px #333;
   border: none;
   color: #333;
+  border: 1px solid #333
 }
 
 .formLabel {
@@ -184,7 +196,8 @@ fieldset {
 }
 
 #clearBtn {
-  width: 20%;
+  width: fit-content;
+  padding: 0 1rem;
   margin-left: auto;
 }
 
@@ -255,6 +268,22 @@ label:not(.ignore),
   margin: .5rem auto;
   display: flex;
   justify-content: space-between;
+}
+
+.scrollBtn {
+  box-shadow: 2px 2px 2px #333;
+  border-radius: 25px;
+  background-color: #444;
+  color: #ddd;
+  transition: all .2s;
+
+}
+
+.scrollBtn:hover {
+  cursor: pointer;
+  background-color: #ddd;
+  color: #444;
+  border: 1px solid darkgreen
 }
 
 @media screen and (max-width: 600px) {
